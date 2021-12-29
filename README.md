@@ -16,5 +16,5 @@
 
 <a id="info"></a>
 ## General information
-Script checks if voice on the recording belongs to male or felame.
-Directory trainall contains 91 sample files. File name ended with M is male, K is female.
+Script checks if voice in the recording belongs to male or felame. <br>
+Directory *'trainall'* contains 91 sample files. File name ended with M is male, K is female.
