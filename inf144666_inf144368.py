@@ -6,6 +6,9 @@ import numpy as np
 import sys
 from datetime import datetime
 import soundfile as sf
+import random
+import warnings
+warnings.filterwarnings('ignore')
 
 maleRange = [60,160]
 femaleRange = [180,270]
@@ -45,16 +48,18 @@ def HPS(rate, inputData):
         return 0
     
 if __name__ == "__main__":
-    file = sys.argv[1]
     try:
-        array, rate = sf.read(file)
+        file = sys.argv[1]
+        try:
+            array, rate = sf.read(file)
+        except:
+            print(random.choice(["K","M"]))
+        result = HPS(rate, array)
+        if result == 1:
+            print("M")
+        elif result == 0:
+            print("K")
     except:
-        print("Could not read file:", file)
-        sys.exit()
-    result = HPS(rate, array)
-    if result == 1:
-        print("M")
-    elif result == 0:
-        print("K")
+        print(random.choice(["K","M"]))
     
     
